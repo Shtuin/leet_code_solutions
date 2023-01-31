@@ -1,8 +1,7 @@
 class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
-        while n%2 == 0 and n!=0:
-            n = int(n/2)
-        if n==1:
+        from operator import countOf
+        if countOf(bin(n), '1') == 1 and n>0:
             return True
         else:
             return False
