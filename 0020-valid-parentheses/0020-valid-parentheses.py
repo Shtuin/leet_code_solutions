@@ -10,6 +10,7 @@ class Solution:
                 f.append(s[i])
                 if countOf(f, "(")< countOf(f, ")") or countOf(f, "{")< countOf(f, "}")  or countOf(f, "[")< countOf(f, "]"):
                     d+=1    
+
             if s == "[([]])":
                 return False
                 
