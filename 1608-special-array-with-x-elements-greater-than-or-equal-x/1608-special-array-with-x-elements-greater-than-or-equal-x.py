@@ -6,5 +6,6 @@ class Solution:
         for key,value in d.items():
             if key==value:
                 return key
+                break
         else:
             return -1
