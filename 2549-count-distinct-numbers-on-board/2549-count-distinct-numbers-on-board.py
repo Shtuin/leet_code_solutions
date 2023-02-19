@@ -4,7 +4,7 @@ class Solution:
         c = [n]
         x = np.arange(1,n)
         i=0
-        while i in range(0,101):
+        while i in range(0,n+1):
             for v in c:
                 d = len(c)
                 for z in x:
