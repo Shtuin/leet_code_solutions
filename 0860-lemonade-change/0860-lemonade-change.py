@@ -1,14 +1,16 @@
 class Solution:
     def lemonadeChange(self, bills: List[int]) -> bool:
-        if bills.count(5)<bills.count(10)+bills.count(20):
-            return False
-        i=0
-        s=1
-        while i<len(bills):
-            if bills[i] == 20 and 5*(bills[:i+1].count(5)-bills[:i+1].count(10))+10*(bills[:i+1].count(10))< 15*bills[:i+1].count(20) or bills[i] == 20 and bills[:i+1].count(5)<bills[:i+1].count(10)+bills[:i+1].count(20):
-                return False
-                break
+        f=t=0
+        for doller in bills:
+            if(doller==5):f+=1
+            elif(doller==10):
+                t+=1
+                if f>=0:f-=1
+                else:return False
             else:
-                i+=1
-        else:
-            return True
+                if(t>0 and f>0):
+                    t-=1
+                    f-=1
+                elif(f>=3):f-=3
+                else:return False
+        return True
