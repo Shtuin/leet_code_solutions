@@ -7,5 +7,5 @@ class Solution:
             a[heights[j]] = names[i]
             i+=1
             j+=1
-        return [i[1] for i in sorted(a.items(), key = lambda x: x[0], reverse = True)]
+        return [i[1] for i in sorted(a.items(), reverse = True)]
         
