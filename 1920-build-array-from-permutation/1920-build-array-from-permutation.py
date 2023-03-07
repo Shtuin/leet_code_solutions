@@ -1,7 +1,6 @@
 class Solution:
     def buildArray(self, nums: List[int]) -> List[int]:
-        from collections import OrderedDict
-        dic=OrderedDict()
+        a = []
         for i in range(len(nums)):
-            dic[i] = nums[nums[i]]
-        return dic.values()
+            a.append(nums[nums[i]])
+        return a
