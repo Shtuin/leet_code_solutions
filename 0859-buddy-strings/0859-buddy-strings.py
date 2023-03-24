@@ -6,9 +6,11 @@ class Solution:
             return True
         elif s==goal and len(set([*s]))==len(s):
             return False
+        elif len(s)!=len(goal):
+            return False
         else:
             while i<len(s):
-                if s.count(s[i])!=goal.count(s[i]) or len(s)!=len(goal):
+                if s.count(s[i])!=goal.count(s[i]):
                     return False
                 elif s[i]!=goal[i]:
                     res+=1
