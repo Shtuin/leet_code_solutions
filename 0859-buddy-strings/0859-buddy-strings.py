@@ -5,6 +5,7 @@ class Solution:
         for d in set([*s]):
             if s.count(d)!=goal.count(d):
                 return False
+                break
         if s==goal and len(set([*s]))!=len(s):
             return True
         elif s==goal and len(set([*s]))==len(s):
