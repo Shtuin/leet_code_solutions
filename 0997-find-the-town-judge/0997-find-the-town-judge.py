@@ -11,24 +11,22 @@ class Solution:
         #         else:
         #             i+=1
         #     return -1
-        mp1 = {}
-        mp2 = {}
-        if n == 1 and len(trust) == 0: return 1
-        if n >= 1 and len(trust) == 0:
-            return -1
-        if n >= 1 and len(trust) == 1:
-            return trust[0][1]
+        if n==1:
+            return n
+        d={}
+        k={}
+        for i in range(1,n+1):
+            d[i]=1
         for i in trust:
-            if i[0] not in mp1:
-                mp1[i[0]] = 1
-            if i[0] in mp1:
-                mp1[i[0]] += 1
-            if i[1] in mp2 and i[1] not in mp1:
-                mp2[i[1]] += 1
-            if i[1] not in mp2:
-                mp2[i[1]] = 1
-        for k, v in mp2.items():
-            if k not in mp1  and v == n - 1:
-                return k
-                
+            if i[0] in d:
+                del d[i[0]]
+            if i[1] in k:
+                k[i[1]]=k[i[1]]+1
+            else:
+                k[i[1]]=1
+        if len(d)!=1:
+            return -1
+        for i,j in k.items():
+            if j==n-1:
+                return i
         return -1
